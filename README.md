@@ -18,12 +18,6 @@ O Sistema criado pela nossa empresa visa acelerar diversas atividades e burocrac
 
 ### 3.MINI-MUNDO<br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
-Entrevista com o usuário e identificação dos requisitos.(quando for o caso de sistemas com cliente  real)<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
 > Um laboratório necessita de um sistema que armazene os dados dos pacientes (nome, CPF, data de nascimento, endereço e telefone) e dos funcionários (nome, registro, endereço, horário de entrada e saída) para melhor controle dos dados e eficiência da empresa. 
 Cada paciente poderá fazer mais de um tipo de exames e os resultados dos mesmos deverão ser armazenados de acordo. O paciente é atendido com um funcionário que realiza o processo de coleta de sangue.
 O objetivo do projeto é entregar os resultados de maneira simples, rápida e intuitiva ao paciente.
@@ -58,22 +52,11 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     
     
 ### 5.MODELO CONCEITUAL<br>
-    A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
-    B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 3 e o Máximo 5.
-        * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)       
-    C) Principais fluxos de informação/entidades do sistema (mínimo 3). <br>Dica: normalmente estes fluxos estão associados as tabelas que conterão maior quantidade de dados 
-    D) Qualidade e Clareza
-        Garantir que a semântica dos atributos seja clara no esquema (nomes coerentes com os dados).
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas (Aplicar os conceitos de normalização abordados).   
-        
+    
 ![Modelo Conceitual](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Modelo%20Conceitual.png?raw=true "Modelo Conceitual")
     
-    
-        
-    
 #### 5.1 Validação do Modelo Conceitual
-    [Provisões de Emergência]: [Kelvin Lehrback]
+    [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
@@ -85,13 +68,92 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do esquema lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+
+![Modelo Logico](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Logico.png?raw=true "Modelo Logico")
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
+
+CREATE TABLE pessoa(
+    id_pessoa int not null,
+    id_telefone int not null,
+    id_endereco int not null,
+    nome_pessoa varchar(45),
+    cpf int,
+    PRIMARY KEY (id_pessoa)
+);
+
+CREATE TABLE contato(
+    id_telefone int not null,
+    id_pessoa int not null,
+    tipo_contato varchar(20),
+    contato varchar(50),
+    PRIMARY KEY (id_telefone),
+    FOREIGN KEY(id_pessoa) REFERENCES pessoa(id_pessoa)
+);
+
+CREATE TABLE endereco(
+    id_endereco int not null,
+    id_pessoa int not null,
+    cep int,
+    numero int,
+    logradouro varchar(30),
+    tipo_logradouro varchar(30),
+    PRIMARY KEY (id_endereco ),
+    FOREIGN KEY(id_pessoa) REFERENCES pessoa(id_pessoa)
+);
+
+CREATE TABLE paciente(
+    id_paciente int not null,
+    id_pessoa int not null,
+    PRIMARY KEY (id_paciente),
+    FOREIGN KEY(id_pessoa) REFERENCES pessoa(id_pessoa)
+);
+
+CREATE TABLE agenda(
+    id_agendamento int not null,
+    id_paciente int not null,
+    id_exame int,
+    data_exame date,
+    PRIMARY KEY (id_agendamento),
+    FOREIGN KEY(id_paciente) REFERENCES paciente(id_paciente)
+);
+
+CREATE TABLE funcionario(
+    id_funcionario int not null,
+    id_pessoa int not null,
+    carga_horaria varchar(50),
+    tipo_funcionario varchar(30),
+    PRIMARY KEY (id_funcionario),
+    FOREIGN KEY(id_pessoa) REFERENCES pessoa(id_pessoa)
+);
+
+CREATE TABLE exame(
+    id_exame int not null,
+    id_funcionario int not null,
+    id_agendamento int not null,
+    tipo_exame varchar(30),
+    status varchar(30),
+    PRIMARY KEY (id_exame),
+    FOREIGN KEY(id_funcionario ) REFERENCES funcionario(id_funcionario ),
+    FOREIGN KEY(id_agendamento ) REFERENCES agenda(id_agendamento )
+);
+
+CREATE TABLE resultado(
+    id_resultado int not null,
+    id_exame int not null,
+    resultado varchar(30),
+    hora_resultado date,
+    PRIMARY KEY (id_resultado ),
+    FOREIGN KEY(id_exame ) REFERENCES exame(id_exame )
+);
+
+ALTER TABLE pessoa ADD CONSTRAINT id_telefone FOREIGN KEY (id_telefone) REFERENCES contato(id_telefone );
+ALTER TABLE pessoa ADD CONSTRAINT id_endereco FOREIGN KEY (id_endereco ) REFERENCES endereco(id_endereco);
+ALTER TABLE agenda ADD CONSTRAINT id_exame  FOREIGN KEY (id_exame) REFERENCES exame(id_exame );
+
+
+
+
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
