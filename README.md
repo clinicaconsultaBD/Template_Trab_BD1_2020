@@ -61,56 +61,71 @@ O objetivo do projeto é entregar os resultados de maneira simples, rápida e in
 
 #### 5.2 Descrição dos dados 
 
-PESSOA: TABELA QUE ARMAZENA DADOS DO TIPO PESSOA DO SISTEMA.
- -ID_PESSOA: ID para identificação da pessoa.
- -ID_TELEFONE:ID para identificação do telefone.
- -ID_ENDERECO:ID para identificação do endereço.
- -NOME_PESSOA:Campo que armazena o nome da pessoa.
- -CPF:Campo que armazena o cadastro de pessoa fisica.
+#### PESSOA: TABELA QUE ARMAZENA DADOS DO TIPO PESSOA DO SISTEMA.
+   ```
+   -ID_PESSOA: ID para identificação da pessoa.
+   -ID_TELEFONE:ID para identificação do telefone.
+   -ID_ENDERECO:ID para identificação do endereço.
+   -NOME_PESSOA:Campo que armazena o nome da pessoa.
+   -CPF:Campo que armazena o cadastro de pessoa fisica.
+  ```
 
-CONTATO: TABELA QUE ARMAZENA DADOS DO TIPO CONTATO NO SISTEMA.(
- -ID_TELEFONE:ID para identificação do telefone.
- -ID_PESSOA: ID para identificação da pessoa.
- -TIPO_CONTATO:Campo que armazena o tipo de contato.
- -CONTATO:Campo que armazena o contato.
+##### CONTATO: TABELA QUE ARMAZENA DADOS DO TIPO CONTATO NO SISTEMA
+```
+   -ID_TELEFONE:ID para identificação do telefone.
+   -ID_PESSOA: ID para identificação da pessoa.
+   -TIPO_CONTATO:Campo que armazena o tipo de contato.
+   -CONTATO:Campo que armazena o contato.
+```
+##### ENDEREÇO: TABELA QUE ARMAZENA DADOS DO TIPO ENDEREÇO NO SISTEMA.
+ ```
+   -ID_ENDERECO:ID para identificação do endereço.
+   -ID_PESSOA: ID para identificação da pessoa.
+   -CEP:Campo que armazena o CEP.
+   -NUMERO:Campo que armazena o numero referente a uma casa ou residência.
+   -LOGRADOURO:Campo que armazena o logradouro.
+   -TIPO_LOGRADOURO:Campo que armazena o tipo de logradouro.
+```
 
-ENDEREÇO: TABELA QUE ARMAZENA DADOS DO TIPO ENDEREÇO NO SISTEMA.
- -ID_ENDERECO:ID para identificação do endereço.
- -ID_PESSOA: ID para identificação da pessoa.
- -CEP:Campo que armazena o CEP.
- -NUMERO:Campo que armazena o numero referente a uma casa ou residência.
- -LOGRADOURO:Campo que armazena o logradouro.
- -TIPO_LOGRADOURO:Campo que armazena o tipo de logradouro.
+#### PACIENTE: TABELA QUE ARMAZENA DADOS DO TIPO PACIENTE NO SISTEMA.
+ ```  
+   -ID_PACIENTE: ID para identificação do paciente.
+   -ID_PESSOA: ID para identificação da pessoa.
+ 
+ ```
 
+#### AGENDA: TABELA QUE ARMAZENA DADOS DO TIPO AGENDA NO SISTEMA.
+ ```  
+   -ID_AGENDAMENTO: ID para identificação do agendamento.
+   -ID_PACIENTE: ID para identificação do paciente.
+   -ID_EXAME: ID para identificação do exame.
+   -DATA_EXAME: Campo que armazena a data do exame.
+ ```
 
-PACIENTE: TABELA QUE ARMAZENA DADOS DO TIPO PACIENTE NO SISTEMA.
- -ID_PACIENTE: ID para identificação do paciente.
- -ID_PESSOA: ID para identificação da pessoa.
+#### FUNCIONARIO: TABELA QUE ARMAZENA OS DADOS DO TIPO FUNCIONARIO NO SISTEMA.
+ ```
+   -ID_FUNCIONARIO:ID para identificação do funcionario.
+   -ID_PESSOA: ID para identificação da pessoa.
+   -CARGA_HORARIO:Campo que armazena a carga horaria do funcionario.
+   -TIPO_FUNCIONARIO:Campo que armazena o tipo do funcionário.
+ ```
 
-AGENDA: TABELA QUE ARMAZENA DADOS DO TIPO AGENDA NO SISTEMA.
- -ID_AGENDAMENTO: ID para identificação do agendamento.
- -ID_PACIENTE: ID para identificação do paciente.
- -ID_EXAME: ID para identificação do exame.
- -DATA_EXAME: Campo que armazena a data do exame.
+#### EXAME: TABELA QUE ARMAZENA OS DADOS DO TIPO EXAME NO SISTEMA.
+ ```
+   -ID_EXAME: ID para identificação do exame.
+   -ID_FUNCIONARIO:ID para identificação do funcionario.
+   -ID_AGENDAMENTO: ID para identificação do agendamento.
+   -TIPO_EXAME:Campo que informa o tipo do exame agendado.
+   -STATUS:Campo que informa o status do exame.
+ ```
 
-FUNCIONARIO: TABELA QUE ARMAZENA OS DADOS DO TIPO FUNCIONARIO NO SISTEMA.
- -ID_FUNCIONARIO:ID para identificação do funcionario.
- -ID_PESSOA: ID para identificação da pessoa.
- -CARGA_HORARIO:Campo que armazena a carga horaria do funcionario.
- -TIPO_FUNCIONARIO:Campo que armazena o tipo do funcionário.
-
-EXAME: TABELA QUE ARMAZENA OS DADOS DO TIPO EXAME NO SISTEMA.
- -ID_EXAME: ID para identificação do exame.
- -ID_FUNCIONARIO:ID para identificação do funcionario.
- -ID_AGENDAMENTO: ID para identificação do agendamento.
- -TIPO_EXAME:Campo que informa o tipo do exame agendado.
- -STATUS:Campo que informa o status do exame.
-
-RESULTADO: TABELA QUE ARMAZENA DADOS DO TIPO RESULTADO NO SISTEMA.
- -ID_RESULTADO:ID para identificação do resultado.
- -ID_EXAME: ID para identificação do exame.
- -RESULTADO:Campo que informa o resultado do exame.
- -HORA_RESULTADO:Campo que informa a hora do resultado.
+#### RESULTADO: TABELA QUE ARMAZENA DADOS DO TIPO RESULTADO NO SISTEMA.
+ ```
+   -ID_RESULTADO:ID para identificação do resultado.
+   -ID_EXAME: ID para identificação do exame.
+   -RESULTADO:Campo que informa o resultado do exame.
+   -HORA_RESULTADO:Campo que informa a hora do resultado.
+ ```
 
 
 
