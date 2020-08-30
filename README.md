@@ -6,7 +6,7 @@ Trabalho desenvolvido durante a disciplina de BD1
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
 primeiro_componente_do_grupo:luciano.ananias.50@gmail.com<br>
-segundo_componente_do_grupo:guguandrade_08@hotmail.com<br>
+segundo_componente_do_grupo:guguandrade080299@gmail.com<br>
 ...<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
