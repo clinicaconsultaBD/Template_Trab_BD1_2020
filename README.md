@@ -72,7 +72,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ![Modelo Logico](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Logico.png?raw=true "Modelo Logico")
 
 ### 7	MODELO FÍSICO<br>
-
+'''
 CREATE TABLE pessoa(
     id_pessoa int not null,
     id_telefone int not null,
@@ -147,15 +147,11 @@ CREATE TABLE resultado(
     FOREIGN KEY(id_exame ) REFERENCES exame(id_exame )
 );
 
-ALTER TABLE pessoa ADD CONSTRAINT id_telefone FOREIGN KEY (id_telefone) REFERENCES contato(id_telefone );
+ALTER TABLE pessoa ADD CONSTRAINT id_telefone FOREIGN KEY (id_telefone) REFERENCES contato(id_telefone );  
 ALTER TABLE pessoa ADD CONSTRAINT id_endereco FOREIGN KEY (id_endereco ) REFERENCES endereco(id_endereco);
 ALTER TABLE agenda ADD CONSTRAINT id_exame  FOREIGN KEY (id_exame) REFERENCES exame(id_exame );
-
-
-
-
-        
-       
+'''
+     
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
         (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
