@@ -288,6 +288,18 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
 ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20contato.png)
 2-) SELECT * FROM endereco;
 ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20endereco.png)
+3-) SELECT * FROM pessoa;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20pessoa.png)
+4-) SELECT * FROM paciente;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20paciente.png)
+5-) SELECT * FROM agenda;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20agenda.png)
+6-) SELECT * FROM funcionario;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20funcionario.png)
+7-) SELECT * FROM exame;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20exame.png)
+8-) SELECT * FROM resultado;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20resultado.png)
 
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
