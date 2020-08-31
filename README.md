@@ -285,6 +285,7 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
 1-) SELECT * FROM contato;
+https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20contato.png
 
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
