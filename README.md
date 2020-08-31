@@ -286,6 +286,8 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
 
 1-) SELECT * FROM contato;
 ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20contato.png)
+2-) SELECT * FROM endereco;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/select%20endereco.png)
 
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
