@@ -147,7 +147,6 @@ CREATE TABLE pessoa(
 
 CREATE TABLE contato(
     id_telefone int not null,
-    id_pessoa int not null,
     tipo_contato varchar(20),
     contato varchar(50),
     PRIMARY KEY (id_telefone),
@@ -156,7 +155,6 @@ CREATE TABLE contato(
 
 CREATE TABLE endereco(
     id_endereco int not null,
-    id_pessoa int not null,
     cep int,
     numero int,
     logradouro varchar(30),
@@ -175,7 +173,6 @@ CREATE TABLE paciente(
 CREATE TABLE agenda(
     id_agendamento int not null,
     id_paciente int not null,
-    id_exame int,
     data_exame date,
     PRIMARY KEY (id_agendamento),
     FOREIGN KEY(id_paciente) REFERENCES paciente(id_paciente)
