@@ -1,4 +1,4 @@
-# TRABALHO 01:  Título do Trabalho
+# TRABALHO 01:  CLINCA GL
 Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
