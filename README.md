@@ -216,12 +216,72 @@ ALTER TABLE agenda ADD CONSTRAINT id_exame  FOREIGN KEY (id_exame) REFERENCES ex
 ```
      
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
 
+```
+INSERT INTO contato(id_telefone, tipo_contato , contato) VALUES 
+(1, 'email', 'lucianobobao@gmail.com'),
+(2, 'email', 'helok@gmail.com'),
+(3, 'telefone', 134815114),
+(4, 'telefone', 879848455);
+
+INSERT INTO endereco(id_endereco , cep, numero, logradouro, tipo_logradouro ) VALUES 
+(1111, 29584878, 52, 'Alameda 20', 'Alameda'),
+(2222, 29182528, 2, 'Travessa II', 'Travessa'),
+(3333, 29547698, 69, 'Travessa III', 'Travessa'),
+(4444, 29114447, 1000, 'Av. Princesa', 'Avenida');
+
+INSERT INTO pessoa(id_pessoa, id_telefone, id_endereco, nome_pessoa, cpf) VALUES 
+(100, 1, 1111, 'Alfredo', 812546),
+(200, 2, 2222, 'Thomas', 231375),
+(300, 3, 3333, 'José', 312345),
+(400, 4, 4444, 'Luciano', 432131);
+
+ALTER TABLE contato ADD id_pessoa int;
+ALTER TABLE agenda ADD CONSTRAINT id_exame  FOREIGN KEY (id_exame) REFERENCES exame(id_exame );
+
+UPDATE contato SET id_pessoa = 100 WHERE id_telefone = 1;
+UPDATE contato SET id_pessoa = 200 WHERE id_telefone = 2;
+UPDATE contato SET id_pessoa = 300 WHERE id_telefone = 3;
+UPDATE contato SET id_pessoa = 400 WHERE id_telefone = 4;
+
+ALTER TABLE endereco ADD id_pessoa int;
+ALTER TABLE endereco ADD CONSTRAINT id_pessoa FOREIGN KEY (id_pessoa ) REFERENCES pessoa(id_pessoa );
+
+UPDATE endereco SET id_pessoa = 100 WHERE id_endereco = 1111;
+UPDATE endereco SET id_pessoa = 200 WHERE id_endereco = 2222;
+UPDATE endereco SET id_pessoa = 300 WHERE id_endereco = 3333;
+UPDATE endereco SET id_pessoa = 400 WHERE id_endereco = 4444;
+
+
+INSERT INTO paciente(id_paciente , id_pessoa) VALUES 
+(11111, 100),
+(22222, 200),
+(33333, 300),
+(44444, 400);
+
+INSERT INTO funcionario(id_funcionario, id_pessoa, carga_horaria, tipo_funcionario) VALUES 
+(1010, 100, 8, 'Médico'),
+(2020, 200, 8, 'Enfermeiro');
+
+INSERT INTO agenda(id_agendamento , id_paciente , data_exame) VALUES 
+(1212, 33333, '2020-08-30'),
+(2323, 44444, '2020-09-20');
+
+INSERT INTO exame(id_exame , id_funcionario , id_agendamento, tipo_exame, status) VALUES 
+(101010, 1010, 1212,'COVID', 'PROCESSO'),
+(202020, 2020, 2323,'SANGUE', 'PROCESSO');
+
+INSERT INTO resultado(id_resultado , id_exame) VALUES 
+(134, 101010),
+(156, 202020);
+
+ALTER TABLE agenda ADD id_exame int;
+ALTER TABLE agenda ADD CONSTRAINT id_exame FOREIGN KEY (id_exame) REFERENCES exame(id_exame);
+
+
+UPDATE agenda SET id_exame = 101010 WHERE id_agenda  = 1212;
+UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
+```
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
