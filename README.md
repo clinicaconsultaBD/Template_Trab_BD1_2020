@@ -305,6 +305,18 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+1-) SELECT * FROM exame WHERE status = 'PROCESSO';
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.2/where%20status.png)
+
+2-) SELECT * FROM funcionario WHERE id_pessoa = 100;
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.2/where%20id%20pessoa.png)
+
+3-) SELECT * FROM funcionario WHERE tipo_funcionario = 'Enfermeiro';
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.2/where%20funcionario.png)
+
+4-) SELECT * FROM pessoa WHERE nome_pessoa = 'Thomas';
+![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.2/where%20nome.png)
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
