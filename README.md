@@ -319,9 +319,34 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    1-) SELECT * FROM endereco where tipo_logradouro = 'Travessa' and numero = 69;
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/logradouro%20and%20numero.png)
 
+    2-) SELECT * FROM exame WHERE not id_funcionario = 2020;
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/exame%20not%20func.png)
+  
+    3-) SELECT * FROM exame WHERE id_agendamento = 1212 or id_exame = 202020;
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/exame%20id%20or%20id.png)
+      
+    4-) SELECT * FROM exame WHERE tipo_exame = 'SANGUE' or tipo_exame = 'COVID';
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/exame%20tipo%20or%20tipo.png)
+
+    5-) SELECT * FROM contato WHERE tipo_contato = 'email' AND contato = 'lucianobobao@gmail.com';
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/contato%20and.png)
+      
+      
+    b) Criar no mínimo 3 consultas com operadores aritméticos 
+    
+    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    1-) SELECT nome_pessoa as Nome, id_pessoa, id_endereco FROM pessoa;
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/nome%20as.png)
+
+    2-) SELECT contato as email FROM contato where tipo_contato = 'email';
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/as%20email.png)
+  
+    3-) SELECT contato as telefone FROM contato where tipo_contato = 'telefone';
+      ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/as%20telefone.png)
+    
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
