@@ -358,9 +358,26 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
     b) Criar minimo 3 de atualização
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+   1-) SELECT pessoa.nome_pessoa as Nome, endereco.cep, contato.contato, exame.tipo_exame as Exame, funcionario.id_funcionario as Funcionario, resultado.resultado from pessoa inner join endereco on (endereco.id_pessoa = pessoa.id_pessoa) inner join contato on (contato.id_pessoa = pessoa.id_pessoa) inner join paciente on (paciente.id_pessoa = pessoa.id_pessoa) inner join agenda on (agenda.id_paciente = paciente.id_paciente) inner join exame on (agenda.id_exame = exame.id_exame) inner join funcionario on (funcionario.id_funcionario = exame.id_funcionario) inner join resultado on (resultado.id_exame = exame.id_exame);
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.4/inner%20all.png)
 
+  2-) SELECT pessoa.nome_pessoa as Paciente, endereco.cep, contato.contato from pessoa inner join endereco on (endereco.id_pessoa = pessoa.id_pessoa) inner join contato on (contato.id_pessoa = pessoa.id_pessoa) inner join paciente on (paciente.id_pessoa = pessoa.id_pessoa) ORDER BY nome_pessoa
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.4/innet%20paciente.png)
+  
+  3-) SELECT pessoa.nome_pessoa as Funcionario, endereco.cep, contato.contato, funcionario.tipo_funcionario as cargo from pessoa inner join endereco on (endereco.id_pessoa = pessoa.id_pessoa) inner join contato on (contato.id_pessoa = pessoa.id_pessoa) inner join funcionario on (funcionario.id_pessoa = pessoa.id_pessoa) ORDER BY cargo
+  
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.4/inner%20funcionario.png)
+    
+  4-)SELECT exame.id_exame as ID_EXAME, agenda.id_paciente ,exame.tipo_exame as TIPO, exame.status from exame inner join agenda on (exame.id_agendamento = agenda.id_agendamento) ORDER BY id_exame
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.4/inner%20exames.png)
+
+  5-) SELECT exame.id_exame as ID, exame.tipo_exame, resultado.resultado from exame inner join resultado on (exame.id_exame = resultado.id_exame) ORDER BY exame.id_exame
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.4/inner%20exame%20resultado.png)
+    
+  6-) SELECT pessoa.nome_pessoa as Nome, endereco.cep, endereco.numero, endereco.logradouro from endereco inner join pessoa on (endereco.id_pessoa = pessoa.id_pessoa) ORDER BY nome_pessoa
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.4/inner%20endere%C3%A7o.png)
+    
+    
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
 
