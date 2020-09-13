@@ -350,6 +350,8 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
     ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.3/as%20telefone.png)
     
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
+   1-)SELECT* FROM endereco WHERE tipo logradouro LIKE 'Travessa'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%201.png)
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
 
