@@ -352,8 +352,25 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
    1-)SELECT* FROM endereco WHERE tipo logradouro LIKE 'Travessa'
    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%201.png)
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+   2-)SELECT * FROM pessoa WHERE nome_pessoa LIKE 'A%'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%202.png)
+   3-)SELECT * FROM endereco WHERE tipo_logradouro LIKE 'Travessa'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%203.png)
+   4-)SELECT * FROM endereco WHERE tipo_logradouro LIKE 'A%'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%204.png)
+   5-)SELECT * FROM contato WHERE tipo_contato LIKE 'email'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%205.png)
+   6-)SELECT * FROM contato WHERE tipo_contato LIKE 'TELEFONE'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%206.png)
+   7-)SELECT * FROM contato WHERE tipo_contato LIKE 'telefone'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%207.png)
+   8-)SELECT * FROM funcionario WHERE carga_horario LIKE '8'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%208.png)
+   9-) SELECT * FROM funcionario WHERE tipo_funcionario LIKE 'M%'
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/LIKE%209.png)
+   10-) SELECT data_exame,id_paciente,date_part('day',(AGE(currente_date,data_exame))) as tempo_para_exame FROM agenda
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/DATE%2010.png)
+    
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
@@ -384,17 +401,7 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
     a) Criar minimo 2 envolvendo algum tipo de junção
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-   1-) SELECT pessoa.nome_pessoa as Nome, endereco.cep, endereco.numero, endereco.logradouro FROM pessoa FULL JOIN endereco ON (pessoa.id_pessoa = endereco .id_pessoa) ORDER BY nome_pessoa
-    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/full%20endere%C3%A7o.png)
-
-  2-) SELECT exame.id_exame as ID_EXAME, agenda.id_paciente ,exame.tipo_exame as TIPO, exame.status FROM exame RIGHT JOIN agenda ON (exame.id_agendamento = agenda.id_agendamento)
-    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/right%20agenda.png)
-  
-  3-) SELECT pessoa.nome_pessoa as Nome, contato.contato FROM pessoa LEFT JOIN contato ON (pessoa.id_pessoa = contato .id_pessoa) ORDER BY nome_pessoa
-   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/left%20contato.png)
-    
-  4-)SELECT exame.id_exame as Exame, exame.tipo_exame as Tipo, resultado.resultado FROM exame FULL JOIN resultado ON (exame.id_exame = resultado.id_exame)
-    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/full%20resultado.png)
+    a) Criar minimo 1 de cada tipo
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
