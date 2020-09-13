@@ -384,7 +384,17 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
     a) Criar minimo 2 envolvendo algum tipo de junção
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
+   1-) SELECT pessoa.nome_pessoa as Nome, endereco.cep, endereco.numero, endereco.logradouro FROM pessoa FULL JOIN endereco ON (pessoa.id_pessoa = endereco .id_pessoa) ORDER BY nome_pessoa
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/full%20endere%C3%A7o.png)
+
+  2-) SELECT exame.id_exame as ID_EXAME, agenda.id_paciente ,exame.tipo_exame as TIPO, exame.status FROM exame RIGHT JOIN agenda ON (exame.id_agendamento = agenda.id_agendamento)
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/right%20agenda.png)
+  
+  3-) SELECT pessoa.nome_pessoa as Nome, contato.contato FROM pessoa LEFT JOIN contato ON (pessoa.id_pessoa = contato .id_pessoa) ORDER BY nome_pessoa
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/left%20contato.png)
+    
+  4-)SELECT exame.id_exame as Exame, exame.tipo_exame as Tipo, resultado.resultado FROM exame FULL JOIN resultado ON (exame.id_exame = resultado.id_exame)
+    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/full%20resultado.png)
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
