@@ -404,25 +404,11 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
     
     
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-   1-) SELECT tipo_exame, count(*)  FROM exame group by tipo_exame
-    ![Alt text]()
-
-  2-) SELECT tipo_logradouro as logradouro, count(*) from endereco group by tipo_logradouro
-    ![Alt text]()
+    a) Criar minimo 2 envolvendo algum tipo de junção
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-   1-) SELECT pessoa.nome_pessoa as Nome, endereco.cep, endereco.numero, endereco.logradouro FROM pessoa FULL JOIN endereco ON (pessoa.id_pessoa = endereco .id_pessoa) ORDER BY nome_pessoa
-    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/full%20endere%C3%A7o.png)
+    a) Criar minimo 1 de cada tipo
 
-  2-) SELECT pessoa.nome_pessoa as Nome, contato.contato FROM pessoa LEFT JOIN contato ON (pessoa.id_pessoa = contato .id_pessoa) ORDER BY nome_pessoa
-    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/left%20contato.png)
-  
-  3-) SELECT exame.id_exame as Exame, exame.tipo_exame as Tipo, resultado.resultado FROM exame FULL JOIN resultado ON (exame.id_exame = resultado.id_exame)
-    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/full%20resultado.png)
-    
-  4-) SELECT exame.id_exame as ID_EXAME, agenda.id_paciente ,exame.tipo_exame as TIPO, exame.status FROM exame RIGHT JOIN agenda ON (exame.id_agendamento = agenda.id_agendamento)
-    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/Atividade%209/9.8/right%20agenda.png)
-    
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
    1-)CREATE VIEW vwEndereco AS SELECT id_endereco AS Código,cep AS CEP,tipo_logradouro AS TPLOGRADOURO FROM enderecos
    ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/view%201.png)
@@ -440,6 +426,14 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
+   1-)SELECT nome_pessoa AS NOME,contato AS CONTATO from pessoa inner join contato ON(contato.id_telefone = pessoa.id_telefone)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/JOIN%201.png)
+   2-)SELECT nome_pessoa AS NOME,cep AS ENDEREÇO from pessoa inner join endereco ON(endereco.id_pessoa = pessoa.id_pessoa)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/join%202.png)
+   3-)SELECT logradouro AS LOGRADOURO,nome_pessoa AS NOME from endereco inner join pessoa ON(pessoa.id_pessoa = endereco.id_pessoa)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/JOIN%203.png)
+   4-)SELECT exame.id_exame as ID_EXAME, agenda.id_paciente ,exame.tipo_exame as TIPO, exame.status FROM exame RIGHT JOIN agenda ON (exame.id_agendamento =       agenda.id_agendamento) where exame.tipo_exame in ('COVID')
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/WhatsApp%20Image%202020-09-13%20at%2022.42.50.jpeg)
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
 
