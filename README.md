@@ -410,6 +410,18 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
     a) Criar minimo 1 de cada tipo
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
+   1-)CREATE VIEW vwEndereco AS SELECT id_endereco AS Código,cep AS CEP,tipo_logradouro AS TPLOGRADOURO FROM enderecos
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/view%201.png)
+   2-)CREATE VIEW vwPessoa AS SELECT nome_pessoa AS NOME,cpf AS CPF from pessoa
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/view%202.png)
+   3-)CREATE VIEW vwContato AS SELECT contato as CONTATO from contato
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/view%203.png)
+   4-)CREATE VIEW PContato AS SELECT nome_pessoa AS NOME,contato AS CONTATO from pessoa inner join contato ON(contato.id_telefone = pessoa.id_telefone)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/view%204.png)
+   5-)CREATE VIEW vwResultado AS SELECT resultado AS RESULTADO from resultado
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/VIEW%205.png)
+   6-)CREATE VIEW Pendereco AS SELECT nome_pessoa AS NOME,cep AS ENDEREÇO from pessoa inner join endereco ON(endereco.id_pessoa = pessoa.id_pessoa)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/VIEW%206.png)
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
 
