@@ -373,6 +373,12 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
     
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
+   1-)UPDATE contato SET contato = 'lucianolindao@gmail.com' WHERE id_telefone = 1
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/UPDATE%201.png)
+   2-)UPDATE endereco SET numero = 59 WHERE id_pessoa = 100
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/UPDATE%202.png)
+   3-)UPDATE pessoa SET nome_pessoa = 'Alfredonho' WHERE id_pessoa = 200
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/UPDATE%203.png)
     a) Criar minimo 3 de exclusão
     b) Criar minimo 3 de atualização
 
