@@ -426,6 +426,12 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
+   1-)SELECT nome_pessoa AS NOME,contato AS CONTATO from pessoa inner join contato ON(contato.id_telefone = pessoa.id_telefone)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/JOIN%201.png)
+   2-)SELECT nome_pessoa AS NOME,cep AS ENDEREÇO from pessoa inner join endereco ON(endereco.id_pessoa = pessoa.id_pessoa)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/join%202.png)
+   3-)SELECT logradouro AS LOGRADOURO,nome_pessoa AS NOME from endereco inner join pessoa ON(pessoa.id_pessoa = endereco.id_pessoa)
+   ![Alt text](https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/images/JOIN%203.png)
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
 
