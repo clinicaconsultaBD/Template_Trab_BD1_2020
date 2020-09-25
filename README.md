@@ -1,4 +1,4 @@
-# TRABALHO 01:  CLINCA GL
+# TRABALHO 01:  CLINICA GL
 Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
