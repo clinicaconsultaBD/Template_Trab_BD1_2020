@@ -455,11 +455,8 @@ UPDATE agenda SET id_exame = 202020 WHERE id_agenda  = 2323;
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
-#### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
-#### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
-#### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
+https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/arquivos/BD1_Relatorios_Clinica.ipynb
 
-    
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
