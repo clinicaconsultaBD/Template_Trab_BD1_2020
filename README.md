@@ -461,7 +461,7 @@ https://github.com/clinicaconsultaBD/Template_Trab_BD1_2020/blob/master/arquivos
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
 #### a) Modelo (pecha kucha)<br>
-#### b) Tempo de apresentação 6:40 
+#### b) LINK PARA O VIDEO:  https://www.youtube.com/watch?v=jiIVTDZlaTU&feature=youtu.be 
 
 ># Marco de Entrega 03: Itens 10 e 11<br>
 <br>
